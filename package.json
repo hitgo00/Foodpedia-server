@@ -1,0 +1,27 @@
+{
+  "name": "foodpedia-server",
+  "version": "1.0.0",
+  "description": "Foodpedia",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitgo00/Foodpedia-server.git"
+  },
+  "author": "Group-2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hitgo00/Foodpedia-server/issues"
+  },
+  "homepage": "https://github.com/hitgo00/Foodpedia-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.0"
+  }
+}
