@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 app.get('/getfooditems',async (req, res) => {
     try {
         console.log(req.query.email);
-        const items =await User.find({ email: req.query.email },, { food_journal_items: 1 });
+        const items =await User.find({ email: req.query.email }, { food_journal_items: 1 });
         
         console.log(items);
         const response = {
@@ -63,7 +63,7 @@ app.get('/getfooditems',async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(400).ssend(err);
+        res.status(400).send(err);
     }
 });
 
