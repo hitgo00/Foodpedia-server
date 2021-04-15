@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     res.send('<h1>FoodPedia</h1>');
 });
 
-// Send All food_journal_items for given email
+// Send All food_journal_items for given email and send response
 app.get('/getfooditems',async (req, res) => {
     try {
         console.log(req.query.email);
