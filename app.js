@@ -35,9 +35,15 @@ const UserSchema = new mongoose.Schema({
     email: String,
     food_journal_items: [{
         food_name: String,
-        image_url: String,
+        image_url: String,  
         created: String,
-        metadata: String,
+        metadata: {
+            Calorie: Number,
+            Fat: Number,
+            Sodium: Number,    
+            Carbohydrates: Number,
+            Fiber: Number
+        },
     },],
 });
 const User = mongoose.model('User', UserSchema);
