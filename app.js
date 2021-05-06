@@ -58,7 +58,21 @@ const UserSchema = new mongoose.Schema(
 );
 const User = mongoose.model('User', UserSchema);
 
-// Routes ..
+const ReviewSchema = new mongoose.Schema(
+  {
+    email: String,
+    name: String,
+    description: String,
+  },
+  {
+    collection: 'Reviews',
+    timestamps: true,
+    minimize: false,
+  },
+);
+const Review = mongoose.model('Reviews', ReviewSchema);
+
+// Routes
 app.get('/', (req, res) => {
   res.send('<h1>FoodPedia</h1>');
 });
@@ -104,9 +118,22 @@ app.post('/addItem', async (req, res) => {
     };
     res.status(200).send(response);
   } catch (err) {
-    console.log(err);
     res.status(400).send(err);
   }
+});
+
+// add a review
+app.post('/addReview', async (req, res) => {
+  const { email, name, description } = req.body;
+
+  const review = new Review({ email, name, description });
+
+  await review.save((err, result) => {
+    if (err) res.send(err);
+    else {
+      res.send(result);
+    }
+  });
 });
 
 // For testing
